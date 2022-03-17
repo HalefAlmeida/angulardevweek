@@ -1,0 +1,67 @@
+<div class="margem">
+  <mat-card>
+    <mat-card-subtitle
+      >Consulta de Exames de Mamografia - Relação de Regiões</mat-card-subtitle
+    >
+    <table matSort (matSortChange)="(regioes)">
+      <tr>
+        <th mat-sort-header="id">ID</th>
+        <th mat-sort-header="regiao">Região</th>
+        <th mat-sort-header="total_exames">Total de Exames</th>
+      </tr>
+
+      <tr *ngFor="let regiao of regioes">
+        <td>{{ regiao.id }}</td>
+        <td>{{ regiao.regiao }}</td>
+        <td>{{ regiao.total_exames }}</td>
+      </tr>
+    </table>
+  </mat-card>
+  <br />
+  <mat-card>
+    <mat-card-subtitle
+      >Consulta de Exames de Mamografia - Relação de Faixas
+      Etárias</mat-card-subtitle
+    >
+    <table matSort (matSortChange)="(faixasEtarias)">
+      <tr>
+        <th mat-sort-header="id">ID</th>
+        <th mat-sort-header="descricao">Descrição</th>
+        <th mat-sort-header="faixa_i">Faixa Inferior</th>
+        <th mat-sort-header="faixa_n">Faixa Superior</th>
+      </tr>
+
+      <tr *ngFor="let faixaEtaria of faixasEtarias">
+        <td>{{ faixaEtaria.id }}</td>
+        <td>{{ faixaEtaria.descricao }}</td>
+        <td>{{ faixaEtaria.faixa_i }}</td>
+        <td>{{ faixaEtaria.faixa_n }}</td>
+      </tr>
+    </table>
+  </mat-card>
+  <br />
+  <mat-card>
+    <mat-card-subtitle
+      >Consulta de Exames de Mamografia - Relação de
+      Incidências</mat-card-subtitle
+    >
+    <table matSort (matSortChange)="(incidencias)">
+      <tr>
+        <th mat-sort-header="id">ID</th>
+        <th mat-sort-header="mes">Mês</th>
+        <th mat-sort-header="qnt_exames">Quantidade de Exames</th>
+        <th mat-sort-header="regiao_id">Região</th>
+        <th mat-sort-header="faixa_id">Faixa Etária</th>
+      </tr>
+
+      <tr *ngFor="let incidencia of incidencias">
+        <td>{{ incidencia.id }}</td>
+        <td>{{ incidencia.mes }}</td>
+        <td>{{ incidencia.qnt_exames }}</td>
+        <td>{{ incidencia.regiao_id }}</td>
+        <td>{{ incidencia.faixa_id }}</td>
+      </tr>
+    </table>
+  </mat-card>
+  <br />
+</div>
